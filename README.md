@@ -14,9 +14,14 @@ KoolProxy 可以对 https 网络数据进行识别代理，使用 https 功能�
  相比原koolproxy，做了调整。
 
 ## 4、依赖
-软件包的正常使用需要依赖 curl, dnsmasq-full, iptables, ipset 和 dnsmasq-extra.
+软件包的正常使用需要依赖 curl, dnsmasq-full, iptables, ipset 和 dnsmasq-extra, openssl-util, diffutils, iptables-mod-nat-extra, wget, ca-bundle, ca-certificates, libustream-openssl
+如果没有 openssl ，就不能正常生成证书，导致https过滤失败！
+如果没有 ipset, dnsmasq-full, diffutils，黑名单模式也会出现问题！（ipset 需要版本6）,如果你的固件的busybox带有支持diff支持，那么diffutils包可以不安装
+如果没有 iptables-mod-nat-extra ，会导致mac过滤失效！
+如果没有 wget, ca-bundle, ca-certificates, libustream-openssl ，会导致规则文件更新失败，host规则条数变为0,如果你的固件的busybox带有支持https的wget，那么这几个包可以不安装。
 
-## 5、配置
+
+## 5、配置, 
 软件包的配置文件路径: /etc/config/koolproxy
 此文件为 UCI 配置文件, 配置方式可参考 Wiki -> Use-UCI-system 和 OpenWrt Wiki
 
@@ -84,4 +89,6 @@ iptables -t nat -L PREROUTING
 ### 10、订阅规则（user1121114685大神和某位大神（忘记名字了）整合而成，能过滤youtube等）
 
 [订阅规则](https://gitee.com/ledewrt/ledeproxyrule/raw/master/rules/kpr_our_rule.txt)
+
+### 首次运行koolproxy的时候，保存并提交速度较慢，因为会生成证书。
 
