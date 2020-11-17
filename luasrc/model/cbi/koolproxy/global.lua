@@ -22,17 +22,17 @@ local p=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/yhosts.txt | w
 local h=luci.sys.exec("grep -v '^!' /usr/share/koolproxy/data/rules/user.txt | wc -l")
 local l=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/koolproxy.txt | wc -l")
 local q=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/daily.txt | wc -l")
-local f=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/antiad.xt | wc -l")
+local f=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/antiad.txt | wc -l")
 local i=luci.sys.exec("cat /usr/share/koolproxy/dnsmasq.adblock | wc -l")
+
 
 if luci.sys.call("pidof koolproxy >/dev/null") == 0 then
 	status = translate("<strong><font color=\"green\">LedeProxy滤广告  运行中</font></strong>")
 else
-	status = translate("<strong><font color=\"red\">LedeProxy滤广告  已停止</font></strong>")
+	status = translate("<strong><font color=\"red\">LedeProxy滤广告 已停止</font></strong>")
 end
 
-o = Map("koolproxy", "<font color='green'>" .. translate("LedeProxy滤广告 ") .."</font>",     "<font color='purple'>" .. translate( "LedeProxy滤广告基于koolproxy整理而来，是能识别adblock规则的代理软件，可以过滤普通网页广告、视频广告、HTTPS广告<br />Adblock Plus 的 Host 列表 + KoolProxy 黑名单模式运行更流畅上网体验，开启全局模式获取更好的过滤效果<br />如果要为客户端过滤https广告，必须在客户端安装根证书。") .."</font>")
-
+o = Map("koolproxy", "<font color='green'>" .. translate("LedeProxy滤广告 ") .."</font>",     "<font color='purple'>" .. translate( "广告过滤大师 Plus+是能识别Adblock规则的广告屏蔽软件，可以过滤网页广告、视频广告、HTTPS广告") .."</font>")
 t = o:section(TypedSection, "global")
 t.anonymous = true
 t.description = translate(string.format("%s<br /><br />", status))
@@ -73,7 +73,7 @@ e:value("koolproxy.txt", translate("静态规则"))
 e:value("daily.txt", translate("每日规则"))
 e:value("kp.dat", translate("视频规则"))
 e:value("mv.txt", translate("乘风视频"))
-e:value("user.txt", translate("自定义规则")
+e:value("user.txt", translate("自定义规则"))
 
 e = t:taboption("base", ListValue, "koolproxy_port", translate("端口控制"))
 e.default = 0
@@ -398,5 +398,5 @@ end
 
 t=o:section(TypedSection,"rss_rules",translate("技术支持"))
 t.anonymous = true
-t:append(Template("koolproxy/feedback.htm"))
+t:append(Template("koolproxy/feedback"))
 return o
