@@ -77,7 +77,7 @@ iptables -t nat -L PREROUTING
 
 [乘风视频](https://gitee.com/ledewrt/ledeproxyrule/raw/master/rules/mv.txt)
 
-### 10、订阅规则
+### 10、订阅规则（user1121114685大神和某位大神（忘记名字了）整合而成，能过滤youtube等）
 
 [订阅规则](https://gitee.com/ledewrt/ledeproxyrule/raw/master/rules/kpr_our_rule.txt)
 
