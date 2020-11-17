@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
-! Checksum: buDnns/k5XqrtBZmAFPO0g
-! Version: 202011170613
+! Checksum: dhy3OtO5xZEtmpLVttLDug
+! Version: 202011170643
 ! Title: EasyList China
 ! Chinese supplement for the EasyList filters
 ||https://012.tw^$third-party
