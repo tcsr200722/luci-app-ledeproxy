@@ -23,7 +23,7 @@ define Package/luci-app-ledeproxy
 	MAINTAINER:=panda-mute
 endef
 
-define Package/luci-app-koolproxyR/description
+define Package/luci-app-ledeproxy/description
 	This package contains LuCI configuration pages for koolproxy.
 endef
 
