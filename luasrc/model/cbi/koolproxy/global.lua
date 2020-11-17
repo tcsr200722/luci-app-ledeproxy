@@ -25,7 +25,6 @@ local q=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/daily.txt | wc
 local f=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/antiad.xt | wc -l")
 local i=luci.sys.exec("cat /usr/share/koolproxy/dnsmasq.adblock | wc -l")
 
-
 if luci.sys.call("pidof koolproxy >/dev/null") == 0 then
 	status = translate("<strong><font color=\"green\">LedeProxy滤广告  运行中</font></strong>")
 else
@@ -125,7 +124,7 @@ e.write = function()
 	luci.sys.call("/usr/share/koolproxy/kpupdate 2>&1 >/dev/null")
 	luci.http.redirect(luci.dispatcher.build_url("admin","services","koolproxy"))
 end
-e.description = translate(string.format("<font color=\"red\"><strong>更新订阅规则与Adblock Plus Hosts</strong></font><br /><font color=\"green\">ABP规则: %s条<br />Fanboy规则: %s条<br />Yhosts规则: %s条<br />Anti-AD规则: %s条<br />静态规则: %s条<br />视频规则: %s<br />乘风视频: %s条<br />每日规则: %s条<br />自定义规则: %s条<br />Host: %s条</font><br />", s, u, p, f, l, b, m, q, h, i))
+e.description = translate(string.format("<font color=\"red\"><strong>更新订阅规则与Adblock Plus Hosts</strong></font><br /><font color=\"green\">ABP规则: %s条<br />Fanboy规则: %s条<br />Yhosts规则: %s条<br />AntiAD规则: %s条<br />静态规则: %s条<br />视频规则: %s<br />乘风视频: %s条<br />每日规则: %s条<br />自定义规则: %s条<br />Host: %s条</font><br />", s, u, p, f, l, b, m, q, h, i))
 t:tab("cert",translate("Certificate Management"))
 
 e=t:taboption("cert",DummyValue,"c1status",translate("<div align=\"left\"><strong>证书恢复</strong></div>"))
