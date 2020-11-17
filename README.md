@@ -12,13 +12,14 @@ KoolProxy 可以对 https 网络数据进行识别代理，使用 https 功能�
 
 ## 3、软件包文件结构:
  相比原koolproxy，做了调整。
-bin 二进制目录
+ 
+bin： 二进制目录
 
-luasrc Luci目录
+luasrc： Luci目录
 
-po/zh-cn 语言目录
+po： 语言目录
 
-root 配置目录
+root： 配置目录
 
 ## 4、依赖
 软件包的正常使用需要依赖 curl, dnsmasq-full, iptables, ipset 和 dnsmasq-extra, openssl-util, diffutils, iptables-mod-nat-extra, wget, ca-bundle, ca-certificates, libustream-openssl
