@@ -63,7 +63,7 @@ iptables -t nat -L PREROUTING
 
 [adblock](https://gitee.com/ledewrt/ledeproxyrule/raw/master/ipsetadblock/dnsmasq.adblock)
 
-### 9、第三方规则
+### 9、第三方规则（已做了转换，koolproxy能识别）
 
 [ABP规则](https://gitee.com/ledewrt/ledeproxyrule/raw/master/rules/easylistchina.txt) 
 
@@ -72,8 +72,6 @@ iptables -t nat -L PREROUTING
 [Yhosts规则](https://gitee.com/ledewrt/ledeproxyrule/raw/master/rules/yhosts.txt)
 
 [Fanboy规则](https://ledewrt.coding.net/p/ledeproxy/d/rulebin/git/raw/master/rules/fanboy.txt)
-
-(gitee的地址会导致大于1M的下载出问题，故用coding的地址）
 
 [AntiAD规则](https://gitee.com/ledewrt/ledeproxyrule/raw/master/rules/antiad.txt)
 
