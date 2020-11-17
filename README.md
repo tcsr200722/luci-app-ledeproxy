@@ -81,5 +81,5 @@ iptables -t nat -L PREROUTING
 
 ### 10、订阅规则
 
-[订阅规则](https://gitee.com/ledewrt/ledeproxyrule/raw/master/rules/kpr_our_rule.txt
+[订阅规则](https://gitee.com/ledewrt/ledeproxyrule/raw/master/rules/kpr_our_rule.txt)
 
