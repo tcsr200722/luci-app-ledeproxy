@@ -397,7 +397,7 @@ function(o,a,i)
 end
 )
 
-t=o:section(TypedSection,"UseTips",translate("使用帮助"))
+t=o:section(TypedSection,"rss_rules",translate("使用帮助"))
 t.anonymous = true
 t:append(Template("koolproxy/feedback"))
 return o
