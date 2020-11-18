@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
-! Checksum: tlGf/y6neKjRMosS/UOyhw
-! Version: 202011170652
+! Checksum: SuIgQm9kQqRzmHDQsGeaoA
+! Version: 202011180024
 ! Title: EasyList China
 ! Chinese supplement for the EasyList filters
 ||https://012.tw^$third-party
@@ -13163,6 +13163,11 @@
 ||http://hh010.com/static/image/fff/
 ||http://stunninglover.com^
 ||http://watakaw133.xyz^
+||http://ywqpgy.com^
+||http://b83pmp.cn^
+||http://hbkhqc.com^
+||http://gng5.cn^
+||http://vq7736.com^
 ||http://01w47q.cn^
 ||http://0217qpineuxbcdhopswkvf.xyz^
 ||http://0224fqpowiuxybnmvdfghj.xyz^
@@ -16835,7 +16840,7 @@ https://163.com##.a_topad
 https://52ghai.com##.a_xiu_t
 https://ishuhui.com##.a_xx_d
 https://159i.com,china.com.cn##.ab
-https://tophub.today##.abc
+https://tophub.today##.am
 https://jiyingdm.com##.abcde
 https://yesky.com##.abox
 https://w3cschool.cn##.abox-item
@@ -20339,7 +20344,7 @@ https://10jqka.com.cn,faxingw.cn,gdmm.com#@#.ad_1
 https://dnwx.com#@#.ad_250
 https://psahz.com#@#.ad_960
 https://eastday.com#@#.ad_center
-https://workercn.cn#@#.ad_content
+https://bfmusic.com.tw,workercn.cn#@#.ad_content
 https://mx-fm.com,ts.21cn.com#@#.ad_img
 https://yxdown.com#@#.ad_l
 https://workercn.cn#@#.ad_main
@@ -22144,7 +22149,7 @@ http://163.com##.a_topad
 http://52ghai.com##.a_xiu_t
 http://ishuhui.com##.a_xx_d
 http://159i.com,china.com.cn##.ab
-http://tophub.today##.abc
+http://tophub.today##.am
 http://jiyingdm.com##.abcde
 http://yesky.com##.abox
 http://w3cschool.cn##.abox-item
@@ -25648,7 +25653,7 @@ http://10jqka.com.cn,faxingw.cn,gdmm.com#@#.ad_1
 http://dnwx.com#@#.ad_250
 http://psahz.com#@#.ad_960
 http://eastday.com#@#.ad_center
-http://workercn.cn#@#.ad_content
+http://bfmusic.com.tw,workercn.cn#@#.ad_content
 http://mx-fm.com,ts.21cn.com#@#.ad_img
 http://yxdown.com#@#.ad_l
 http://workercn.cn#@#.ad_main
