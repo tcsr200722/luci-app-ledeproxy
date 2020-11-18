@@ -32,7 +32,7 @@ else
 	status = translate("<strong><font color=\"red\">LedeProxy滤广告 已停止</font></strong>")
 end
 
-o = Map("koolproxy", "<font color='green'>" .. translate("LedeProxy滤广告 ") .."</font>",     "<font color='purple'>" .. translate( "广告过滤大师 Plus+是能识别Adblock规则的广告屏蔽软件，可以过滤网页广告、视频广告、HTTPS广告") .."</font>")
+o = Map("koolproxy", "<font color='green'>" .. translate("LedeProxy滤广告 ") .."</font>",     "<font color='purple'>" .. translate( "LedeProxy滤广告是基于koolproxy整理而来的能识别Adblock规则的广告屏蔽软件，她可以很好过滤网页广告、视频广告、HTTPS广告，请尽情享用！") .."</font>")
 t = o:section(TypedSection, "global")
 t.anonymous = true
 t.description = translate(string.format("%s<br /><br />", status))
