@@ -22,4 +22,3 @@ config UseTips
 	option load '0'
 	option name '1'
 	option url '1'
-
