@@ -29,10 +29,11 @@ local i=luci.sys.exec("cat /usr/share/koolproxy/dnsmasq.adblock | wc -l")
 if luci.sys.call("pidof koolproxy >/dev/null") == 0 then
 	status = translate("<strong><font color=\"green\">LedeProxy滤广告  运行中</font></strong>")
 else
-	status = translate("<strong><font color=\"red\">LedeProxy滤广告 已停止</font></strong>")
+	status = translate("<strong><font color=\"red\">LedeProxy滤广告  已停止</font></strong>")
 end
 
-o = Map("koolproxy", "<font color='green'>" .. translate("LedeProxy滤广告 ") .."</font>",     "<font color='purple'>" .. translate( "LedeProxy滤广告是基于koolproxy整理而来的能识别Adblock规则的广告屏蔽软件，她可以很好过滤网页广告、视频广告、HTTPS广告，请尽情享用！") .."</font>")
+o = Map("koolproxy", "<font color='green'>" .. translate("广告过滤大师 Plus+ ") .."</font>",     "<font color='purple'>" .. translate( "LedeProxy滤广告是基于koolproxy整理而来的能识别Adblock规则的广告屏蔽软件，她可以很好过滤网页广告、视频广告、HTTPS广告，请尽情享用！") .."</font>")
+
 t = o:section(TypedSection, "global")
 t.anonymous = true
 t.description = translate(string.format("%s<br /><br />", status))
@@ -127,13 +128,13 @@ end
 e.description = translate(string.format("<font color=\"red\"><strong>更新订阅规则与Adblock Plus Hosts</strong></font><br /><font color=\"green\">ABP规则: %s条<br />Fanboy规则: %s条<br />Yhosts规则: %s条<br />AntiAD规则: %s条<br />静态规则: %s条<br />视频规则: %s<br />乘风视频: %s条<br />每日规则: %s条<br />自定义规则: %s条<br />Host: %s条</font><br />", s, u, p, f, l, b, m, q, h, i))
 t:tab("cert",translate("Certificate Management"))
 
-e=t:taboption("cert",DummyValue,"c1status",translate("<div align=\"left\"><strong>证书恢复</strong></div>"))
+e=t:taboption("cert",DummyValue,"c1status",translate("<div align=\"left\">Certificate Restore</div>"))
 e=t:taboption("cert",FileUpload,"")
 e.template="koolproxy/caupload"
 e=t:taboption("cert",DummyValue,"",nil)
 e.template="koolproxy/cadvalue"
 if nixio.fs.access("/usr/share/koolproxy/data/certs/ca.crt")then
-	e=t:taboption("cert",DummyValue,"c2status",translate("<div align=\"left\"><strong>证书备份</strong></div>"))
+	e=t:taboption("cert",DummyValue,"c2status",translate("<div align=\"left\">Certificate Backup</div>"))
 	e=t:taboption("cert",Button,"certificate")
 	e.inputtitle=translate("Backup Download")
 	e.inputstyle="reload"
@@ -396,7 +397,7 @@ function(o,a,i)
 end
 )
 
-t=o:section(TypedSection,"UseTips",translate("使用小提示"))
+t=o:section(TypedSection,"UseTips",translate("使用帮助"))
 t.anonymous = true
 t:append(Template("koolproxy/feedback"))
 return o
