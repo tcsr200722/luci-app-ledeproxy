@@ -1,4 +1,4 @@
-local m, s, o
+ocal m, s, o
 local koolproxy = "koolproxy"
 local sid = arg[1]
 
