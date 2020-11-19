@@ -69,7 +69,7 @@ e.rmempty = false
 e:value("easylistchina.txt", translate("ABP规则"))
 e:value("fanboy.txt", translate("Fanboy规则"))
 e:value("yhosts.txt", translate("Yhosts规则"))
-e:value("antiad.txt", translate("AntiAD规则"))
+e:value("antiad.txt", translate("Anti-AD规则"))
 e:value("koolproxy.txt", translate("静态规则"))
 e:value("daily.txt", translate("每日规则"))
 e:value("kp.dat", translate("视频规则"))
@@ -397,7 +397,7 @@ function(o,a,i)
 end
 )
 
-t=o:section(TypedSection,"rss_rules",translate("使用帮助"))
+t=o:section(TypedSection,"rss_rules",translate("使用小提示))
 t.anonymous = true
 t:append(Template("koolproxy/feedback"))
 return o
