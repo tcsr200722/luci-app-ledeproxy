@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
-! Checksum: SuIgQm9kQqRzmHDQsGeaoA
-! Version: 202011180024
+! Checksum: NawOtKyGnoFYYQrD1zIqnw
+! Version: 202011182353
 ! Title: EasyList China
 ! Chinese supplement for the EasyList filters
 ||https://012.tw^$third-party
@@ -407,6 +407,7 @@
 ||https://p0y.cn^*.swf
 ||https://pababy.cn^$third-party
 ||https://pagechoice.net^$third-party
+||https://papa9394.com^$third-party
 ||https://piclick.cn^$third-party
 ||https://popin.cc^$third-party
 ||https://poxzyu.com^$third-party
@@ -3487,6 +3488,8 @@
 ||https://onx8.com/theme/tange/add/
 ||https://onx8.com/zb_users/theme/ydgreen/style/ad/
 ||https://oodcd.cn/pan/config/ad.json
+||https://oodcd.cn/pan/config/copy.
+||https://oodcd.cn/pan/config/history.
 ||https://ooo.0o0.ooo/2017/11/03/59fc6b3c5b723.jpg
 ||https://ooqiu.com/ad_js/
 ||https://opticsky.cn/images/2015/gy-px201
@@ -6672,6 +6675,7 @@
 ||http://padsreds.com^
 ||http://pagechoice.net^$third-party
 ||http://panel-cn.com^
+||http://papa9394.com^$third-party
 ||http://papa999.xyz^
 ||http://pay838.com^
 ||http://pcmzn.com^
@@ -9955,7 +9959,6 @@
 ||http://i-gamer.net^$domain=cartomad.com|cartonmad.com|cartoomad.com|cartoonad.com|cartoonmad.com
 ||http://i-part.com.tw/js2/newShineStar
 ||http://i.alipayobjects.com/i/ecmng/$image,domain=my.alipay.com
-||http://i.syasn.com^
 ||http://i322.com/ad_avshow/
 ||http://i8.com.cn/images/a.swf
 ||http://i8.com.cn/images/tiandijie.jpg
@@ -10836,6 +10839,8 @@
 ||http://onx8.com/theme/tange/add/
 ||http://onx8.com/zb_users/theme/ydgreen/style/ad/
 ||http://oodcd.cn/pan/config/ad.json
+||http://oodcd.cn/pan/config/copy.
+||http://oodcd.cn/pan/config/history.
 ||http://ooo.0o0.ooo/2017/11/03/59fc6b3c5b723.jpg
 ||http://ooqiu.com/ad_js/
 ||http://opticsky.cn/images/2015/gy-px201
@@ -13163,11 +13168,6 @@
 ||http://hh010.com/static/image/fff/
 ||http://stunninglover.com^
 ||http://watakaw133.xyz^
-||http://ywqpgy.com^
-||http://b83pmp.cn^
-||http://hbkhqc.com^
-||http://gng5.cn^
-||http://vq7736.com^
 ||http://01w47q.cn^
 ||http://0217qpineuxbcdhopswkvf.xyz^
 ||http://0224fqpowiuxybnmvdfghj.xyz^
@@ -13469,6 +13469,7 @@
 ||http://b0lc.cn^
 ||http://b2b5.net^
 ||http://b54ah.cn^
+||http://b83pmp.cn^
 ||http://babalink.net^
 ||http://babalink.top^
 ||http://baful.net^
@@ -13879,6 +13880,7 @@
 ||http://gaohuduo.cn^
 ||http://gb686.cn^
 ||http://gbeik.com^
+||http://gbzumh.cn^
 ||http://gc8fjz.cn^
 ||http://gcaog.com^
 ||http://gdfc0563.com^
@@ -13907,6 +13909,7 @@
 ||http://gmuqa.cn^
 ||http://gmxyorg.cn^
 ||http://gneusqa.cn^
+||http://gng5.cn^
 ||http://gnmbd.top^
 ||http://gnncc.cc^
 ||http://gobali.cn^
@@ -13975,6 +13978,7 @@
 ||http://hbbww.com^
 ||http://hbfie.org/mh
 ||http://hbhxqcw.com^
+||http://hbkhqc.com^
 ||http://hblanghun.cn^
 ||http://hbnygj.com^
 ||http://hbttcc.com^
@@ -14931,6 +14935,7 @@
 ||http://vodtw.la/js/a1.
 ||http://vodtw.la^*xhtml
 ||http://voterlin.cn^
+||http://vq7736.com^
 ||http://vvnna.com^
 ||http://vwb4p.cn^
 ||http://w13qh.cn^
@@ -15206,6 +15211,7 @@
 ||http://yushengyuancaishui.com^
 ||http://yuxiny.com^
 ||http://ywbwsm.com^
+||http://ywqpgy.com^
 ||http://ywqum.cn^
 ||http://ywxtmox.cn^
 ||http://yxhxs.com^
@@ -16009,6 +16015,7 @@ https://324324.cn###gg_728_90
 https://miniie.com,tisai.com###gg_content
 https://yy.com###gg_left
 https://yy.com###gg_right
+https://kukuw.com###gg_rl
 https://7654.com###gg_top
 https://shouji56.com###gg_top_banner
 https://baidu.com###ggbtm
@@ -16840,7 +16847,6 @@ https://163.com##.a_topad
 https://52ghai.com##.a_xiu_t
 https://ishuhui.com##.a_xx_d
 https://159i.com,china.com.cn##.ab
-https://tophub.today##.am
 https://jiyingdm.com##.abcde
 https://yesky.com##.abox
 https://w3cschool.cn##.abox-item
@@ -17155,6 +17161,7 @@ https://caibaojian.com##.aliyun-inner
 https://cnfol.com##.allAd
 https://bkill.com##.alliance-ad
 https://pilifx.com##.alltop
+https://tophub.today##.am
 https://gugeys.cc##.am-g
 https://gufengmh.com##.animated
 https://1111.baidu.com,bdimg.com,tieba.baidu.com,tieba.com,xingqu.baidu.com##.app_forum_top_nav_tab
@@ -19430,7 +19437,7 @@ https://backchina.com##a[href*=".21usdeal.com"]
 https://cnzol.com##a[href*=".91comics.com/"]
 https://163.com,bilibili.com,longzhu.com##a[href*=".admaster."]
 https://itboth.com,itkeyword.com##a[href*=".aliyun."]
-https://boke112.com,dzbhdm.com,techweb.com.cn##a[href*=".aliyun.com"]
+https://boke112.com,dzbhdm.com,mzh.ren,techweb.com.cn##a[href*=".aliyun.com"]
 https://zhanqi.tv##a[href*=".bfun.cn/ad."]:not([href*=".zhanqi."])
 https://backchina.com##a[href*=".cardbenefit.com/"]
 https://cnbeta.com,qudong.com##a[href*=".ctyun."]
@@ -20567,18 +20574,18 @@ https://hpjav.tv##body > div[style^="position: fixed;"]
 https://verystream.com#@#.adsbox
 https://googleads.g.doubleclick.net###mys-wrapper
 https://xhtml?%22+$script,third-party
+https://52biquge.com##[onclick*="app"]
+https://52biquge.com##a[href^="http://html.350.com/"]
+https://55shuba.com###botDiv
+https://biqubao.com##div[style="width:976px;"]
+https://bixia.org##dd[style*="bottom:"]
 https://bxwx666.org###addiv3
 https://bxwx666.org###bdstatic
-https://55shuba.com###botDiv
 https://duanwenxue.com##.qgzdwx
-https://jx.la##[onclick*="apk"]
-https://52biquge.com##[onclick*="app"]
 https://dukankan.com,ibqg5200.com,snwx3.com##[style*="fixed"]
-https://52biquge.com##a[href^="http://html.350.com/"]
-https://bixia.org##dd[style*="bottom:"]
-https://xuehongxs.com##div[id^="cs_DIV_cscpvrich"]
-https://biqubao.com##div[style="width:976px;"]
+https://jx.la##[onclick*="apk"]
 https://piaotian5.com##script + div[style="padding:15px;"]
+https://xuehongxs.com##div[id^="cs_DIV_cscpvrich"]
 https://cocomanhua.com#@#.gg1000
 https://getrelax.cc,sexylove.club##.loaded-popup-wrapper
 https://rjno1.com##div[style="display:none"]
@@ -21318,6 +21325,7 @@ http://324324.cn###gg_728_90
 http://miniie.com,tisai.com###gg_content
 http://yy.com###gg_left
 http://yy.com###gg_right
+http://kukuw.com###gg_rl
 http://7654.com###gg_top
 http://shouji56.com###gg_top_banner
 http://baidu.com###ggbtm
@@ -22149,7 +22157,6 @@ http://163.com##.a_topad
 http://52ghai.com##.a_xiu_t
 http://ishuhui.com##.a_xx_d
 http://159i.com,china.com.cn##.ab
-http://tophub.today##.am
 http://jiyingdm.com##.abcde
 http://yesky.com##.abox
 http://w3cschool.cn##.abox-item
@@ -22464,6 +22471,7 @@ http://caibaojian.com##.aliyun-inner
 http://cnfol.com##.allAd
 http://bkill.com##.alliance-ad
 http://pilifx.com##.alltop
+http://tophub.today##.am
 http://gugeys.cc##.am-g
 http://gufengmh.com##.animated
 http://1111.baidu.com,bdimg.com,tieba.baidu.com,tieba.com,xingqu.baidu.com##.app_forum_top_nav_tab
@@ -24739,7 +24747,7 @@ http://backchina.com##a[href*=".21usdeal.com"]
 http://cnzol.com##a[href*=".91comics.com/"]
 http://163.com,bilibili.com,longzhu.com##a[href*=".admaster."]
 http://itboth.com,itkeyword.com##a[href*=".aliyun."]
-http://boke112.com,dzbhdm.com,techweb.com.cn##a[href*=".aliyun.com"]
+http://boke112.com,dzbhdm.com,mzh.ren,techweb.com.cn##a[href*=".aliyun.com"]
 http://zhanqi.tv##a[href*=".bfun.cn/ad."]:not([href*=".zhanqi."])
 http://backchina.com##a[href*=".cardbenefit.com/"]
 http://cnbeta.com,qudong.com##a[href*=".ctyun."]
@@ -25876,18 +25884,18 @@ http://hpjav.tv##body > div[style^="position: fixed;"]
 http://verystream.com#@#.adsbox
 http://googleads.g.doubleclick.net###mys-wrapper
 http://xhtml?%22+$script,third-party
+http://52biquge.com##[onclick*="app"]
+http://52biquge.com##a[href^="http://html.350.com/"]
+http://55shuba.com###botDiv
+http://biqubao.com##div[style="width:976px;"]
+http://bixia.org##dd[style*="bottom:"]
 http://bxwx666.org###addiv3
 http://bxwx666.org###bdstatic
-http://55shuba.com###botDiv
 http://duanwenxue.com##.qgzdwx
-http://jx.la##[onclick*="apk"]
-http://52biquge.com##[onclick*="app"]
 http://dukankan.com,ibqg5200.com,snwx3.com##[style*="fixed"]
-http://52biquge.com##a[href^="http://html.350.com/"]
-http://bixia.org##dd[style*="bottom:"]
-http://xuehongxs.com##div[id^="cs_DIV_cscpvrich"]
-http://biqubao.com##div[style="width:976px;"]
+http://jx.la##[onclick*="apk"]
 http://piaotian5.com##script + div[style="padding:15px;"]
+http://xuehongxs.com##div[id^="cs_DIV_cscpvrich"]
 http://cocomanhua.com#@#.gg1000
 http://getrelax.cc,sexylove.club##.loaded-popup-wrapper
 http://rjno1.com##div[style="display:none"]
