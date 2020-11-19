@@ -3250,7 +3250,6 @@
 ||https://ads-elsevier.net
 ||https://ads-for-free.com
 ||https://ads-pixiv.net
-||https://ads-twitter.com
 ||https://ads.cc
 ||https://ads01.com
 ||https://ads1-adnow.com
@@ -12408,9 +12407,6 @@
 ||https://fabolele.com
 ||https://fabricww.com
 ||https://fabrkrup.com
-||https://badge.facebook.com
-||https://pixel.facebook.com
-||https://staticxx.facebook.com
 ||https://facebookicon.net
 ||https://facebookma.cn
 ||https://facebruek.online
@@ -31838,13 +31834,6 @@
 ||https://twitcount.com
 ||https://twitstat.us
 ||https://twittad.com
-||https://analytics.twitter.com
-||https://scribe.twitter.com
-||https://search.twitter.com
-||https://ads.twitter.com
-||https://syndication-o.twitter.com
-||https://syndication.twitter.com
-||https://urls.api.twitter.com
 ||https://twittercounter.com
 ||https://twitterforweb.com
 ||https://twittericon.com
