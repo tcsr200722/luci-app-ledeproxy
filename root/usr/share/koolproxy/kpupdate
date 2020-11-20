@@ -107,10 +107,8 @@ update_rss_rules() {
 	config_foreach __update_rule rss_rule
 }
 
-
-	
 update_rules() {
-		 echo $(date "+%F %T"): ------------------- 内置规则更新 ------------------- >>$LOGFILE
+	echo $(date "+%F %T"): ------------------- 内置规则更新 ------------------- >>$LOGFILE
 	         wget 'https://gitee.com/ledewrt/ledeproxy/raw/master/rules/kp.dat' -q -O $KP_DIR/data/rules/kp.dat
             	 wget 'https://gitee.com/ledewrt/ledeproxy/raw/master/rules/daily.txt' -q -O $KP_DIR/data/rules/daily.txt
 		 wget 'https://gitee.com/ledewrt/ledeproxy/raw/master/rules/koolproxy.txt' -q -O $KP_DIR/data/rules/koolproxy.txt
@@ -125,14 +123,12 @@ update_rules() {
                  fanboy_rules_local=`cat /usr/share/koolproxy/data/rules/fanboy.txt  | sed -n '3p'|awk '{print $3,$4}'`
 		 koolproxy_rules_local=`cat /usr/share/koolproxy/data/rules/koolproxy.txt  | sed -n '3p'|awk '{print $3,$4}'`
                  mv_rules_local=`cat /usr/share/koolproxy/data/rules/mv.txt  | sed -n '3p'|awk '{print $3,$4}'
-		 antiad_rules_local=`cat /usr/share/koolproxy/data/rules/antiad.txt  | sed -n '3p'|awk '{print $3,$4}'
                  echo $(date "+%F %T"): -------------------ABP(easylist) version $easylist_rules_local >>$LOGFILE
-                 echo $(date "+%F %T"): -------------------Fanboy   version $fanboy_rules_local >>$LOGFILE
-		 echo $(date "+%F %T"): -------------------Koolproxy   version $koolproxy_rules_local >>$LOGFILE
+                 echo $(date "+%F %T"): -------------------fanboy   version $fanboy_rules_local >>$LOGFILE
+		 echo $(date "+%F %T"): -------------------koolproxy   version $koolproxy_rules_local >>$LOGFILE
 		 echo $(date "+%F %T"): -------------------mv   version $mv_rules_local >>$LOGFILE
-		 echo $(date "+%F %T"): -------------------Antiad   version $antiad_rules_local >>$LOGFILE
                  echo $(date "+%F %T"): ------------------- 内置规则更新成功！ ------------------- >>$LOGFILE
-                RESTART_KOOLPROXY=true
+RESTART_KOOLPROXY=true
 }
 update_adb_host() {
 	/usr/sbin/adblockplus >>$LOGFILE 2>&1 &
