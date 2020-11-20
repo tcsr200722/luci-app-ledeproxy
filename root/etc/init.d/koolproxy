@@ -105,7 +105,7 @@ creat_ipset() {
 
 add_white_black_ip() {
 	echo_date 添加ipset名单
-	ip_lan="0.0.0.0/8 10.0.0.0/8 100.64.0.0/10 127.0.0.0/8 169.254.0.0/16 172.16.0.0/12 192.0.0.0/24 192.0.2.0/24 192.31.196.0/24 192.52.193.0/24 192.88.99.0/24 192.168.0.0/16 192.175.48.0/24 198.18.0.0/15 198.51.100.0/24 203.0.113.0/24 224.0.0.0/4 240.0.0.0/4 255.255.255.255"
+	ip_lan="0.0.0.0/8 10.0.0.0/8 100.64.0.0/10 127.0.0.0/8 169.254.0.0/16 172.16.0.0/12 192.168.0.0/16 224.0.0.0/4 240.0.0.0/4"
 	for ip in $ip_lan
 	do
 		ipset -A white_kp_list $ip >/dev/null 2>&1
@@ -198,37 +198,37 @@ load_user_rules() {
 }
 
 load_rules() {
-	sed -i '1,7s/1/0/g' $KP_DIR/data/source.list
+	sed -i '1,9s/1/0/g' $KP_DIR/data/source.list
 
 	local rulelist="$(uci -q get koolproxy.@global[0].koolproxy_rules)"
 	for rule in $rulelist
 	do
 		case "$rule" in
-			yhosts.txt)
+			koolproxy.txt)
 				sed -i '1s/0/1/g' $KP_DIR/data/source.list
 			;;
-			easylistchina.txt)
+			daily.txt)
 				sed -i '2s/0/1/g' $KP_DIR/data/source.list
 			;;
-			fanboy.txt)
+			kp.dat)
 				sed -i '3s/0/1/g' $KP_DIR/data/source.list
 			;;
-			antiad.txt)
+			user.txt)
 				sed -i '4s/0/1/g' $KP_DIR/data/source.list
 			;;
-			koolproxy.txt)
+			yhosts.txt)
 				sed -i '5s/0/1/g' $KP_DIR/data/source.list
 			;;
-			mv.txt)
+			easylistchina.txt)
 				sed -i '6s/0/1/g' $KP_DIR/data/source.list
 			;;
-			daily.txt)
+			fanboy.txt)
 				sed -i '7s/0/1/g' $KP_DIR/data/source.list
 			;;
-			kp.dat)
+			antiad.txt)
 				sed -i '8s/0/1/g' $KP_DIR/data/source.list
 			;;
-			user.txt)
+			mv.txt)
 				sed -i '9s/0/1/g' $KP_DIR/data/source.list
 			;;
 		esac
@@ -238,12 +238,7 @@ load_rules() {
 	for rule in $rulelist
 	do
 		case "$rule" in
-			easylistchina.txt)
-				sed -i '10s/0/1/g' $KP_DIR/data/source.list
-			;;
-			fanboy.txt)
-				sed -i '11s/0/1/g' $KP_DIR/data/source.list
-			;;
+	             
 		esac
 	done
 }
@@ -254,13 +249,13 @@ get_mode_name() {
 			echo "不过滤"
 		;;
 		1)
-			echo "过滤 HTTP"
+			echo "http模式"
 		;;
 		2)
-			echo "过滤HTTP + HTTPS"
+			echo "http + https"
 		;;
 		3)
-			echo "过滤全端口"
+			echo "full port"
 		;;
 	esac
 }
