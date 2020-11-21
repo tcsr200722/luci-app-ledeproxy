@@ -9,29 +9,30 @@ local fs = require "nixio.fs"
 local sys = require "luci.sys"
 local http = require "luci.http"
 
+
 local o,t,e
 local v=luci.sys.exec("/usr/share/koolproxy/koolproxy -v")
-local s=luci.sys.exec("head -3 /usr/share/koolproxy/data/rules/koolproxy.txt | grep rules | awk -F' ' '{print $3,$4}'")
-local u=luci.sys.exec("head -4 /usr/share/koolproxy/data/rules/koolproxy.txt | grep video | awk -F' ' '{print $3,$4}'")
-local p=luci.sys.exec("head -3 /usr/share/koolproxy/data/rules/daily.txt | grep rules | awk -F' ' '{print $3,$4}'")
+local a=luci.sys.exec("head -3 /usr/share/koolproxy/data/rules/koolproxy.txt | grep rules | awk -F' ' '{print $3,$4}'")
+local b=luci.sys.exec("head -4 /usr/share/koolproxy/data/rules/koolproxy.txt | grep video | awk -F' ' '{print $3,$4}'")
+local c=luci.sys.exec("head -3 /usr/share/koolproxy/data/rules/daily.txt | grep rules | awk -F' ' '{print $3,$4}'")
+local s=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/easylistchina.txt | wc -l")
+local m=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/mv.txt | wc -l")
+local u=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/fanboy.txt | wc -l")
+local p=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/yhosts.txt | wc -l")
+local h=luci.sys.exec("grep -v '^!' /usr/share/koolproxy/data/rules/user.txt | wc -l")
 local l=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/koolproxy.txt | wc -l")
 local q=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/daily.txt | wc -l")
-local h=luci.sys.exec("grep -v '^!' /usr/share/koolproxy/data/rules/user.txt | wc -l")
+local f=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/antiad.txt | wc -l")
 local i=luci.sys.exec("cat /usr/share/koolproxy/dnsmasq.adblock | wc -l")
-local y=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/yhosts.txt | wc -l")
-local e=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/easylistchina.txt | wc -l")
-local f=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/fanboy.txt | wc -l")
-local a=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/antiad.txt | wc -l")
-local m=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/mv.txt | wc -l")
+
 
 if luci.sys.call("pidof koolproxy >/dev/null") == 0 then
-	status = translate("<strong><font color=\"green\">KoolProxyR plus+  运行中</font></strong>")
+	status = translate("<strong><font color=\"green\">LedeProxy滤广告  运行中</font></strong>")
 else
-	status = translate("<strong><font color=\"red\">KoolProxyR plus+  已停止</font></strong>")
+	status = translate("<strong><font color=\"red\">LedeProxy滤广  已停止</font></strong>")
 end
 
-o = Map("koolproxy", translate("KoolProxyR plus+ "), translate("KoolProxyR plus+是能识别adblock规则的免费开源软件,追求体验更快、更清洁的网络，屏蔽烦人的广告 <br /><font color=\"red\"><br /></font>"))
-
+o = Map("koolproxy", "<font color='green'>" .. translate("LedeProxy滤广 ") .."</font>",     "<font color='purple'>" .. translate( "LedeProxy滤广是能识别Adblock规则的广告屏蔽软件，可以过滤网页广告、视频广告、HTTPS广告") .."</font>")
 
 t = o:section(TypedSection, "global")
 t.anonymous = true
@@ -46,10 +47,10 @@ e.rmempty = false
 e = t:taboption("base", DummyValue, "koolproxy_status", translate("程序版本"))
 e.value = string.format("[ %s ]", v)
 
-e = t:taboption("base", Value, "startup_delay", translate("Startup Delay"))
-e:value(0, translate("Not enabled"))
-for _, v in ipairs({5, 10, 15, 25, 40}) do
-	e:value(v, translate("%u seconds") %{v})
+e = t:taboption("base", Value, "startup_delay", translate("启动延迟"))
+e:value(0, translate("不启用"))
+for _, v in ipairs({5, 10, 15, 25, 40, 60}) do
+	e:value(v, translate("%u 秒") %{v})
 end
 e.datatype = "uinteger"
 e.default = 0
@@ -65,15 +66,15 @@ e:value(3, translate("视频模式"))
 e = t:taboption("base", MultiValue, "koolproxy_rules", translate("内置规则"))
 e.optional = false
 e.rmempty = false
+e:value("easylistchina.txt", translate("ABP规则"))
+e:value("fanboy.txt", translate("Fanboy规则"))
+e:value("yhosts.txt", translate("Yhosts规则"))
+e:value("antiad.txt", translate("AntiAD规则"))
 e:value("koolproxy.txt", translate("静态规则"))
 e:value("daily.txt", translate("每日规则"))
 e:value("kp.dat", translate("视频规则"))
-e:value("user.txt", translate("自定义规则"))
-e:value("yhosts.txt", translate("Yhosts规则"))
-e:value("easylistchina.txt", translate("ABP规则"))
-e:value("fanboy.txt", translate("Fanboy规则"))
-e:value("antiad.txt", translate("Anti-AD规则"))
 e:value("mv.txt", translate("乘风视频"))
+e:value("user.txt", translate("自定义规则"))
 
 e = t:taboption("base", ListValue, "koolproxy_port", translate("端口控制"))
 e.default = 0
@@ -107,9 +108,12 @@ e:value(3, translate("全部过滤"))
 e.description = translate(string.format("<font color=\"blue\"><strong>访问控制设置中其他主机的默认规则</strong></font>"))
 
 e = t:taboption("base", ListValue, "time_update", translate("定时更新"))
+
 for t = 0,23 do
+
 	e:value(t,translate("每天"..t.."点"))
 end
+e:value(nil, translate("关闭"))
 e.default = 0
 e.rmempty = false
 e.description = translate(string.format("<font color=\"red\"><strong>定时更新订阅规则与Adblock Plus Hosts</strong></font>"))
@@ -121,16 +125,16 @@ e.write = function()
 	luci.sys.call("/usr/share/koolproxy/kpupdate 2>&1 >/dev/null")
 	luci.http.redirect(luci.dispatcher.build_url("admin","services","koolproxy"))
 end
-e.description = translate(string.format("<font color=\"red\"><strong>更新订阅规则与Adblock Plus Hosts</strong></font><br /><font color=\"green\">静态规则: %s / %s条<br />视频规则: %s<br />每日规则: %s / %s条<br />自定义规则: %s条<br />Host: %s条<br />Yhosts规则: %s条<br />ABP规则: %s条<br />Fanboy规则: %s条<br />Anti-AD规则: %s条<br />乘风视频: %s条</font><br />", s, l, u, p, q, h, i, y, e, f, a, m))
+e.description = translate(string.format("<font color=\"red\"><strong>更新订阅规则与Adblock Plus Hosts</strong></font><br /><font color=\"green\">ABP规则: %s条<br />Fanboy规则: %s条<br />Yhosts规则: %s条<br />AntiAD规则: %s条<br />静态规则: %s条<br />视频规则: %s<br />乘风视频: %s条<br />每日规则: %s条<br />自定义规则: %s条<br />Host: %s条</font><br />", s, u, p, f, l, b, m, q, h, i))
 t:tab("cert",translate("Certificate Management"))
 
-e=t:taboption("cert",DummyValue,"c1status",translate("<div align=\"left\">Certificate Restore</div>"))
+e=t:taboption("cert",DummyValue,"c1status",translate("<div align=\"left\"><strong>证书恢复</strong></div>"))
 e=t:taboption("cert",FileUpload,"")
 e.template="koolproxy/caupload"
 e=t:taboption("cert",DummyValue,"",nil)
 e.template="koolproxy/cadvalue"
 if nixio.fs.access("/usr/share/koolproxy/data/certs/ca.crt")then
-	e=t:taboption("cert",DummyValue,"c2status",translate("<div align=\"left\">Certificate Backup</div>"))
+	e=t:taboption("cert",DummyValue,"c2status",translate("<div align=\"left\"><strong>证书备份</strong></div>"))
 	e=t:taboption("cert",Button,"certificate")
 	e.inputtitle=translate("Backup Download")
 	e.inputstyle="reload"
@@ -224,7 +228,7 @@ t:tab("iplist",translate("IP黑名单设置"))
 
 local i = "/etc/adblocklist/adblockip"
 e = t:taboption("iplist", TextValue, "adblock_ip")
-e.description = translate("这些已经加入的ip地址不会使用filter.Please输入ip地址或ip地址段，每行只能输入一个ip地址。例如，112.123.134.145 / 24或112.123.134.145。")
+e.description = translate("这些已经加入的ip地址不会使用过滤器.请输入ip地址或ip地址段，每行只能输入一个ip地址。例如，112.123.134.145 / 24或112.123.134.145。")
 e.rows = 28
 e.wrap = "off"
 e.rmempty = false
@@ -288,7 +292,7 @@ end
 function e.write(self, section, value)
 end
 
-t=o:section(TypedSection,"acl_rule",translate("KoolProxyR 访问控制"),
+t=o:section(TypedSection,"acl_rule",translate("访问控制"),
 translate("ACLs is a tools which used to designate specific IP filter mode,The MAC addresses added to the list will be filtered using https"))
 t.template="cbi/tblsection"
 t.sortable=true
@@ -323,11 +327,7 @@ e:value(1,translate("过滤 HTTP"))
 e:value(2,translate("过滤HTTP + HTTPS"))
 e:value(3,translate("过滤全端口"))
 
-
-
-
-
-t=o:section(TypedSection,"rss_rule",translate("KoolProxyR 规则订阅"), translate("请确保订阅规则的兼容性"))
+t=o:section(TypedSection,"rss_rule",translate("广告过滤规则订阅"), translate("请确保订阅规则的兼容性"))
 t.anonymous=true
 t.addremove=true
 t.sortable=true
@@ -396,7 +396,8 @@ function(o,a,i)
 	end
 end
 )
-t=o:section(TypedSection,"rss_rules",translate("使用小提示"))
+
+t=o:section(TypedSection,"rss_rules",translate("技术支持"))
 t.anonymous = true
 t:append(Template("koolproxy/feedback"))
 return o
