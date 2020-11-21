@@ -100,7 +100,7 @@ creat_ipset() {
 	# Load ipset netfilter kernel modules and kernel modules
 	ipset -! create white_kp_list nethash
 	ipset -! create black_koolproxy iphash
-	cat $KP_DIR/data/rules/yhosts.txt $KP_DIR/data/rules/easylistchina.txt $KP_DIR/data/rules/fanboy.txt $KP_DIR/data/rules/antiad.txt $KP_DIR/data/rules/koolproxy.txt $KP_DIR/data/rules/mv.txt $KP_DIR/data/rules/daily.txt $KP_DIR/data/rules/user.txt | grep -Eo "(.\w+\:[1-9][0-9]{1,4})/" | grep -Eo "([0-9]{1,5})" | sort -un | sed -e '$a\80' -e '$a\443' | sed -e "s/^/-A kp_full_port &/g" -e "1 i\-N kp_full_port bitmap:port range 0-65535 " | ipset -R -!
+	cat $KP_DIR/data/rules/yhosts.txt $KP_DIR/data/rules/easylistchina.txt $KP_DIR/data/rules/fanboy.txt $KP_DIR/data/rules/antiad.txt $KP_DIR/data/rules/chengfeng.txt $KP_DIR/data/rules/koolproxy.txt $KP_DIR/data/rules/mv.txt $KP_DIR/data/rules/daily.txt $KP_DIR/data/rules/user.txt | grep -Eo "(.\w+\:[1-9][0-9]{1,4})/" | grep -Eo "([0-9]{1,5})" | sort -un | sed -e '$a\80' -e '$a\443' | sed -e "s/^/-A kp_full_port &/g" -e "1 i\-N kp_full_port bitmap:port range 0-65535 " | ipset -R -!
 }
 
 add_white_black_ip() {
@@ -198,7 +198,7 @@ load_user_rules() {
 }
 
 load_rules() {
-	sed -i '1,10s/1/0/g' $KP_DIR/data/source.list
+	sed -i '1,11s/1/0/g' $KP_DIR/data/source.list
 
 	local rulelist="$(uci -q get koolproxy.@global[0].koolproxy_rules)"
 	for rule in $rulelist
@@ -228,8 +228,11 @@ load_rules() {
 			antiad.txt)
 				sed -i '8s/0/1/g' $KP_DIR/data/source.list
 			;;
-			mv.txt)
+			chengfeng.txt)
 				sed -i '9s/0/1/g' $KP_DIR/data/source.list
+			;;
+			mv.txt)
+				sed -i '10s/0/1/g' $KP_DIR/data/source.list
 			;;
 		esac
 	done
@@ -238,8 +241,8 @@ load_rules() {
 	for rule in $rulelist
 	do
 		case "$rule" in
-                       chengfeng.txt)
-				sed -i '10s/0/1/g' $KP_DIR/data/source.list
+                       qita.txt)
+				sed -i '11s/0/1/g' $KP_DIR/data/source.list
 			;;
 		esac
 	done
