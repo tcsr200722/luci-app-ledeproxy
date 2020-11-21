@@ -116,6 +116,7 @@ update_rules() {
             	 wget 'https://ledewrt.coding.net/p/ledeproxy/d/rulebin/git/raw/master/rules/fanboy.txt' -q -O $KP_DIR/data/rules/fanboy.txt
 	         wget 'https://gitee.com/ledewrt/ledeproxy/raw/master/rules/easylistchina.txt' -q -O $KP_DIR/data/rules/easylistchina.txt
 		 wget 'https://gitee.com/ledewrt/ledeproxy/raw/master/rules/antiad.txt' -q -O $KP_DIR/data/rules/antiad.txt
+		 wget 'https://gitee.com/ledewrt/ledeproxy/raw/master/rules/chengfeng.txt' -q -O $KP_DIR/data/rules/chengfeng.txt
             	 wget 'https://gitee.com/ledewrt/ledeproxy/raw/master/rules/mv.txt' -q -O $KP_DIR/data/rules/mv.txt
 		 wget 'https://gitee.com/ledewrt/ledeproxy/raw/master/ipsetadblock/dnsmasq.adblock' -q -O $KP_DIR/dnsmasq.adblock
 		 wget 'https://gitee.com/ledewrt/ledeproxy/raw/master/ipsetadblock/koolproxy_ipset.conf' -q -O $KP_DIR/koolproxy_ipset.conf
